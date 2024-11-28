@@ -57,7 +57,7 @@ const resetAll = () => {
       </div>
       <div class="card-footer text-end">
       <button type="button" @click="$router.push(`/details/${product.id}`)" class="btn btn-outline-primary me-2">Details</button>
-      <button type="button" class="btn btn-outline-success">Cart</button>
+      <RouterLink type="button" to="/cart" class="btn btn-outline-success">Cart</RouterLink>
     </div>
     </div>
   </div>

@@ -8,7 +8,7 @@
     <img style="width: 350px;" :src="product.img" alt="">
     <h3 class="card-text mt-3">{{ product.price }}$</h3>
     <p class="card-text mt-3">{{ product.discription }}$</p>
-    <button type="button" class="btn btn-outline-success mt-2 mb-2">Cart</button>
+    <RouterLink type="button" to="/cart" class="btn btn-outline-success">Cart</RouterLink>
   </div>
   <div class="card-footer text-body-secondary">
     {{ product.publish_at }}
