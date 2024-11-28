@@ -12,15 +12,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><img src="https://api.technodom.kz/f3/api/v1/images/800/800/256710_1.jpg" style="width: 150px;" class="rounded mx-auto d-block" alt="..."></td>
-      <td>Asus</td>
-      <td>300</td>
-      <td><input type="number" class="form-control" value="1" ></td>
+    <tr v-for="product, index in cartStore.cartList" :key="product.id">
+      <th scope="row">{{ index + 1 }}</th>
+      <td><img :src="product.img" style="width: 150px;" class="rounded mx-auto d-block" alt="..."></td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td><input type="number" @input="updateCount(product.id, $event)"  class="form-control" :value="product.count" ></td>
       <td>
-        <button type="button" class="btn btn-outline-info me-2">Detail</button>
-        <button type="button" class="btn btn-outline-danger">Delete</button>
+        <button type="button" @click="$router.push(`/details/${product.id}`)" class="btn btn-outline-primary me-2">Details</button>
+        <button type="button" @click="cartStore.removeFromCart(product.id)" class="btn btn-outline-danger">Delete</button>
       </td>
     </tr>
   </tbody>
@@ -29,13 +29,22 @@
 <div class="row">
     <div class="col text-end">
     <button type="button" class="btn btn-outline-success mt-3"><i class="bi bi-bag-check"></i> Buy</button>
-    <h2 class="mt-3">Total: 200$</h2>
+    <h2 class="mt-3">Total: {{ cartStore.totalSum }}$</h2>
 </div>
 </div>
 </div>
 </template>
 
 <script setup>
+import { useCartStore } from "@/stores/cart";
+
+const cartStore = useCartStore();
+
+const updateCount = (id, event) => {
+    cartStore.updateCountCartById(id, event.target.value);
+}
+
+
 
 </script>
 

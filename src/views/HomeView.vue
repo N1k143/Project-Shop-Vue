@@ -1,10 +1,12 @@
 <script setup>
 import { useProductStore } from "@/stores/product";
 import { useCategoryStore } from "@/stores/category";
+import { useCartStore } from "@/stores/cart";
 import { ref } from "vue";
 
 const productStore = useProductStore();
 const categoryStore = useCategoryStore();
+const cartStore = useCartStore();
 const category = ref(null);
 const searchText = ref('');
 const products = ref([]);
@@ -57,7 +59,7 @@ const resetAll = () => {
       </div>
       <div class="card-footer text-end">
       <button type="button" @click="$router.push(`/details/${product.id}`)" class="btn btn-outline-primary me-2">Details</button>
-      <RouterLink type="button" to="/cart" class="btn btn-outline-success">Cart</RouterLink>
+      <button type="button" @click="cartStore.addToCart(product.id)" class="btn btn-outline-success">Cart</button>
     </div>
     </div>
   </div>
