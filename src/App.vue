@@ -14,7 +14,7 @@
           <RouterLink class="nav-link" to="/about">About</RouterLink>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+          <RouterLink class="nav-link" to="/cart" href="#">Cart</RouterLink>
         </li>
 
       </ul>
