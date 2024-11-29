@@ -61,6 +61,8 @@ export const useCartStore = defineStore('cart', () => {
         }
     }
 
+
+
     return {
         carts,
         findIndexProductCartById,
@@ -68,6 +70,6 @@ export const useCartStore = defineStore('cart', () => {
         addToCart,
         cartList,
         totalSum,
-        removeFromCart
+        removeFromCart,
     }
 })
