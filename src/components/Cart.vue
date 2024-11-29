@@ -41,7 +41,10 @@ import { RouterLink } from "vue-router";
 
 const cartStore = useCartStore();
 
+
 const updateCount = (id, event) => {
     cartStore.updateCountCartById(id, event.target.value);
 }
+
+
 </script>

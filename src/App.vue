@@ -16,7 +16,9 @@
         <li class="nav-item">
           <RouterLink class="nav-link" to="/cart" href="#">Cart</RouterLink>
         </li>
-
+        <li class="nav-item">
+          <RouterLink class="nav-link" to="/orders" href="#">Orders</RouterLink>
+        </li>
       </ul>
     </div>
   </div>
